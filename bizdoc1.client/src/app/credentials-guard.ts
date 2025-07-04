@@ -9,12 +9,13 @@ export const credentialsGuard: CanActivateFn = (route, state) => {
 
   const session = inject(SessionService);
 
+
   return session.ok ||
-    //session.refresh().pipe(
-      //catchError(e =>
+    session.refresh().pipe(
+      catchError(e =>
         of(router.parseUrl(`/access?r=${route.url}`))
-      //),
-      //map(() => true))
+      ),
+      map(() => true))
 
 
 };

@@ -23,6 +23,186 @@
   ],
   "Forms": [
     {
+      "Format": "A{0:D5}",
+      "Workflow": {
+        "Version": 0,
+        "Connectors": [
+          {
+            "Id": "connectornk2Jv",
+            "TargetID": "ownerpssHU",
+            "SourceID": "startC3hTA",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {},
+            "Type": "Orthogonal"
+          },
+          {
+            "Id": "connectorAEQBa",
+            "TargetID": "endpI6AQ",
+            "SourceID": "ownerpssHU",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {
+              "Action": "approve"
+            },
+            "Type": "Orthogonal"
+          }
+        ],
+        "Nodes": [
+          {
+            "Id": "ownerpssHU",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 85,
+            "Shape": {
+              "Type": "Flow",
+              "Shape": "Process"
+            },
+            "Style": {},
+            "Annotations": [
+              {
+                "Content": "Owner"
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "owner",
+              "message": "\u0027Waiting for your choice!\u0027",
+              "standardTime": "05:00:00"
+            }
+          },
+          {
+            "Id": "endpI6AQ",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 225,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "End",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": ""
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "end",
+              "state": "closed"
+            }
+          },
+          {
+            "Id": "startC3hTA",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 125,
+            "OffsetY": -35,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "Start",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": "",
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Center",
+                "Style": {
+                  "Fill": "transparent",
+                  "Color": "black",
+                  "FontSize": 12,
+                  "Bold": false,
+                  "Italic": false
+                }
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "start",
+              "state": "open"
+            }
+          }
+        ]
+      },
+      "Type": "BizDoc.Configuration.Forms.Box",
+      "Title": "Form 1",
+      "Options": {
+        "Sections": [
+          {
+            "Name": "section_1",
+            "Title": "Section 1",
+            "Rows": [
+              {
+                "Fields": [
+                  {
+                    "DefaultValue": false,
+                    "Name": "yes_no_1",
+                    "Required": true,
+                    "ControlType": "yes-no"
+                  },
+                  {
+                    "Options": [
+                      {
+                        "Key": "option_1",
+                        "Value": "Option 1"
+                      },
+                      {
+                        "Key": "option_2",
+                        "Value": "Option 2"
+                      }
+                    ],
+                    "Multiple": true,
+                    "Name": "checklist_1",
+                    "Label": "Checklist 1",
+                    "ControlType": "checklist"
+                  }
+                ]
+              },
+              {
+                "Fields": [
+                  {
+                    "Name": "switch_1",
+                    "Label": "Switch 1",
+                    "ControlType": "switch"
+                  },
+                  {
+                    "DataType": "months",
+                    "Name": "select_1",
+                    "Label": "Select 1",
+                    "ControlType": "select"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "Icon": "description",
+      "Name": "form_1"
+    },
+    {
       "Format": "S{0}",
       "Template": "bizdoc-support-form",
       "Workflow": {

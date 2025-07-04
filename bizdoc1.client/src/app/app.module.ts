@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, provideRouter } from '@angular/router';
-
 import { AuthenticationImpl, BIZDOC_CONFIG, BizDocModule, MaterialModule, SharedModule } from '@bizdoc/core';
 import { CredentialsModule } from '@bizdoc/credentials';
+import { SurveyModule } from '@bizdoc/survey';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PrivateZoneComponent } from './private-zone/private-zone.component';
@@ -15,8 +15,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { NotFound } from './not-found/not-found.component';
 import { routes } from './routes';
 import { Localize } from './localize';
-import { MatListModule } from '@angular/material/list';
 import { CredentialsService } from './credentials.service';
+import { System } from './system/system';
 
 @NgModule({
   declarations: [
@@ -27,13 +27,15 @@ import { CredentialsService } from './credentials.service';
     FolderComponent,
     SignInComponent,
     NotFound,
-    Localize
+    Localize,
+    System
   ],
   imports: [
     ReactiveFormsModule,
     MaterialModule,
     RouterModule.forRoot(routes),
     BrowserModule,
+    SurveyModule,
     BizDocModule.forRoot({ components: [] }),
     SharedModule.forChild({
       routingEngine: 'ng'

@@ -1,19 +1,25 @@
 <p>private-zone-component works!</p>
 
-<mat-list>
+<button routerLink="/admin" matIconButton><mat-icon>settings</mat-icon></button>
+<mat-nav-list>
   @for (folder of folders; track folder.name) {
   <mat-list-item [routerLink]="['/folder', folder.name]">
     <mat-icon>{{folder.icon}}</mat-icon>
-    {{folder.title}}
+    <span [matBadge]="folder.name == 'ib' ? 20: null" matBadgeSize="small">
+
+      {{folder.title}}
+    </span>
   </mat-list-item>
   }
-</mat-list>
+</mat-nav-list>
+<hr />
 <!---->
-<mat-list>
+<mat-nav-list>
   @for (form of forms; track form.name) {
   <mat-list-item (click)="create(form)">
     <mat-icon>{{form.icon}}</mat-icon>
     {{form.title}}
   </mat-list-item>
   }
-</mat-list>
+</mat-nav-list>
+

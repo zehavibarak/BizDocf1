@@ -7,6 +7,7 @@ import { credentialsGuard } from './credentials-guard';
 import { recipientResolver } from './recipient-resolver';
 import { NotFound } from './not-found/not-found.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { System } from './system/system';
 
 export const routes: Route[] = [
   {
@@ -32,6 +33,10 @@ export const routes: Route[] = [
   {
     path: 'access',
     component: SignInComponent,
+  },
+  {
+    path: 'admin',
+    component: System,
   },
   {
     path: '**',

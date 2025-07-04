@@ -1,0 +1,29 @@
+{
+  "OutOfOffice": {},
+  "Notifications": {
+    "Sound": true,
+    "Active": true,
+    "MyDocumentStateChange": true,
+    "AnyDocumentStateChange": false,
+    "CommentAnyDocument": true,
+    "CommentMyDocument": true,
+    "Tagged": true,
+    "CubeAnomaly": true,
+    "EventsAlarm": 0,
+    "UpcomingEvents": true,
+    "Likes": false
+  },
+  "GrantAccess": {},
+  "LastActive": "2025-07-04T12:05:23+03:00",
+  "InboxTouch": "2025-07-04T12:07:22+00:00",
+  "Extra": {
+    "BoxProfile": {}
+  },
+  "Emails": {
+    "Active": true,
+    "Notifications": true,
+    "Mail": true,
+    "Chat": true,
+    "Events": true
+  }
+}

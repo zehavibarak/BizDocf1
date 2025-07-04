@@ -25,6 +25,7 @@ export class SignInComponent {
     this._credentials.signIn(username!, password!).subscribe({
       next: () => {
         const url = this._route.snapshot.queryParams['r'];
+
         this._router.navigateByUrl(url || '/zone');
       }
     });

@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { BrowseItemsComponent, DocumentModel, RecipientModel } from '@bizdoc/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-folder',
@@ -7,13 +8,18 @@ import { Router } from '@angular/router';
   templateUrl: './folder.component.html',
   styleUrl: './folder.component.css'
 })
-export class FolderComponent {
+export class FolderComponent implements OnInit {
   private readonly _router = inject(Router);
+  private readonly _route = inject(ActivatedRoute);
 
-  folderId: string = 'ib';
+  folderId!: string;
 
+  ngOnInit(): void {
+    this._route.params.subscribe(p =>
+      this.folderId = p['id'])
+  }
   /** */
-  onItemClick(id: string) {
-    this._router.navigate(['/form', id]);
+  onItemClick(evt: any) {
+    this._router.navigate(['/form', evt.id], { state: { data: evt } });
   }
 }
