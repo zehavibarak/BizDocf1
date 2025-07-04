@@ -1,0 +1,1211 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/moding-il/bizdoc.core/master/bizdoc-schema.json",
+  "Currencies": [
+    {
+      "Symbol": "$",
+      "Title": "USD",
+      "Name": "USD"
+    }
+  ],
+  "Devices": [
+    {
+      "ExecutionMode": "Challenge",
+      "Type": "BizDoc.Core.Messaging.Internals.Devices.EmailDevice",
+      "Title": "Email",
+      "Name": "email"
+    },
+    {
+      "ExecutionMode": "Challenge",
+      "Type": "BizDoc.Core.Messaging.Internals.Devices.SignalRDevice",
+      "Title": "SignalR",
+      "Name": "signalR"
+    }
+  ],
+  "Forms": [
+    {
+      "Format": "S{0}",
+      "Template": "bizdoc-support-form",
+      "Workflow": {
+        "Version": 0,
+        "Connectors": [
+          {
+            "Id": "connectornk2Jv",
+            "TargetID": "ownerpssHU",
+            "SourceID": "startC3hTA",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {},
+            "Type": "Orthogonal"
+          },
+          {
+            "Id": "connectorAEQBa",
+            "TargetID": "endpI6AQ",
+            "SourceID": "ownerpssHU",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {
+              "Action": "approve"
+            },
+            "Type": "Orthogonal"
+          }
+        ],
+        "Nodes": [
+          {
+            "Id": "ownerpssHU",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 85,
+            "Shape": {
+              "Type": "Flow",
+              "Shape": "Process"
+            },
+            "Style": {},
+            "Annotations": [
+              {
+                "Content": "Owner"
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "owner",
+              "message": "\u0027Waiting for your choice!\u0027",
+              "standardTime": "05:00:00"
+            }
+          },
+          {
+            "Id": "endpI6AQ",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 225,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "End",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": ""
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "end",
+              "state": "closed"
+            }
+          },
+          {
+            "Id": "startC3hTA",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 125,
+            "OffsetY": -35,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "Start",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": "",
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Center",
+                "Style": {
+                  "Fill": "transparent",
+                  "Color": "black",
+                  "FontSize": 12,
+                  "Bold": false,
+                  "Italic": false
+                }
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "start",
+              "state": "open"
+            }
+          }
+        ]
+      },
+      "Position": "None",
+      "Type": "BizDoc.Configuration.Forms.SupportCall",
+      "Title": "SupportCall",
+      "Icon": "support",
+      "Name": "support-call",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Folders": [
+    {
+      "Title": "Drafts",
+      "Icon": "drafts",
+      "Name": "df",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Title": "Inbox",
+      "Icon": "inbox",
+      "Name": "ib",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Title": "SentItems",
+      "Icon": "archive",
+      "Name": "si",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Title": "Mentions",
+      "Icon": "alternate_email",
+      "Name": "tag",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Title": "DeletedItems",
+      "Icon": "delete_outline",
+      "Name": "di",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Attributes": [
+    {
+      "DataType": "states",
+      "Type": "BizDoc.Configuration.Attributes.DocumentState",
+      "Title": "DocumentState",
+      "Disabled": true,
+      "Name": "document-state",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Controls": [
+    {
+      "Visible": false,
+      "Template": "file-control",
+      "Type": "BizDoc.Configuration.Controls.FilePicker",
+      "Title": "File",
+      "Icon": "attach_file",
+      "Name": "file",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "select-control",
+      "Type": "BizDoc.Configuration.Controls.Select",
+      "Title": "Select",
+      "Icon": "unfold_more",
+      "Name": "select",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "date-control",
+      "Type": "BizDoc.Configuration.Controls.DatePicker",
+      "Title": "Date",
+      "Icon": "event",
+      "Name": "date",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "checklist-control",
+      "Type": "BizDoc.Configuration.Controls.Checklist",
+      "Title": "Checklist",
+      "Icon": "checklist",
+      "Name": "checklist",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "address-control",
+      "Type": "BizDoc.Configuration.Controls.Address",
+      "Title": "Address",
+      "Icon": "other_houses",
+      "Name": "address",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "radio-button-control",
+      "Type": "BizDoc.Configuration.Controls.RadioButton",
+      "Title": "RadioButton",
+      "Icon": "radio_button_checked",
+      "Name": "radio-button",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "yesno-control",
+      "Type": "BizDoc.Configuration.Controls.YesNo",
+      "Title": "YesNo",
+      "Icon": "check_circle",
+      "Name": "yes-no",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "checkbox-control",
+      "Type": "BizDoc.Configuration.Controls.Checkbox",
+      "Title": "Checkbox",
+      "Icon": "check_box",
+      "Name": "checkbox",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "switch-control",
+      "Type": "BizDoc.Configuration.Controls.Switch",
+      "Title": "Switch",
+      "Icon": "toggle_on",
+      "Name": "switch",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Visible": false,
+      "Template": "html-control",
+      "System": true,
+      "Type": "BizDoc.Configuration.Controls.Container",
+      "Title": "Container",
+      "Icon": "table_rows",
+      "Name": "container",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "timespan-control",
+      "System": true,
+      "Type": "BizDoc.Configuration.Controls.Timespan",
+      "Title": "Timespan",
+      "Icon": "timelapse",
+      "Name": "timespan",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "localized-text-control",
+      "System": true,
+      "Type": "BizDoc.Configuration.Controls.LocalizedText",
+      "Title": "LocalizedText",
+      "Icon": "translate",
+      "Name": "localized-text",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "programmable-expression-control",
+      "System": true,
+      "Type": "BizDoc.Configuration.Controls.ProgrammableExpression",
+      "Title": "ProgrammableExpression",
+      "Icon": "code",
+      "Name": "programmable-expression",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "time-control",
+      "Type": "BizDoc.Configuration.Controls.TimePicker",
+      "Title": "Time",
+      "Icon": "schedule",
+      "Name": "time",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "tags-control",
+      "Type": "BizDoc.Configuration.Controls.Chips",
+      "Title": "Chips",
+      "Icon": "label",
+      "Name": "chips",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "html-control",
+      "Type": "BizDoc.Configuration.Controls.Html",
+      "Title": "Html",
+      "Icon": "html",
+      "Name": "html",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "number-control",
+      "Type": "BizDoc.Configuration.Controls.Number",
+      "Title": "Numeric",
+      "Icon": "123",
+      "Name": "number",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "signature-control",
+      "Type": "BizDoc.Configuration.Controls.Signature",
+      "Title": "Signature",
+      "Icon": "gesture",
+      "Name": "signature",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "date-range-control",
+      "Type": "BizDoc.Configuration.Controls.DateRangePicker",
+      "Title": "DateRange",
+      "Icon": "date_range",
+      "Name": "date-range",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "textarea-control",
+      "Type": "BizDoc.Configuration.Controls.TextArea",
+      "Title": "TextArea",
+      "Icon": "rtt",
+      "Name": "text-area",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "text-control",
+      "Type": "BizDoc.Configuration.Controls.Text",
+      "Title": "Text",
+      "Icon": "text_fields",
+      "Name": "text",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "axes-picker-control",
+      "Type": "BizDoc.Configuration.Controls.AxesPicker",
+      "Title": "Axes",
+      "Icon": "finance_chip",
+      "Name": "axes-picker",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Tags": [
+    {
+      "Template": "bizdoc-role-in-route-tag",
+      "Type": "BizDoc.Core.Generics.Tags.RoleInRoute",
+      "Title": "RoleInRoute",
+      "Name": "role-in-route",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Reports": [
+    {
+      "Template": "bizdoc-documents",
+      "Type": "BizDoc.Configuration.Reports.CubeDocuments",
+      "Title": "Documents",
+      "Icon": "article",
+      "Name": "cube-documents",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-cube-usage",
+      "Type": "BizDoc.Configuration.Reports.CubeUsage",
+      "Title": "ChartUsage",
+      "Icon": "show_chart",
+      "Name": "cube-usage",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Reports.Substitution",
+      "Title": "Substitution",
+      "Icon": "supervised_user_circle",
+      "Name": "substitution",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-tasks",
+      "Type": "BizDoc.Configuration.Reports.PendingTasks",
+      "Title": "Pending",
+      "Icon": "add_task",
+      "Name": "tasks",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-timeline",
+      "Type": "BizDoc.Configuration.Reports.Timeline",
+      "Title": "Timeline",
+      "Icon": "mediation",
+      "Name": "timeline",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-performance-hilo",
+      "Type": "BizDoc.Configuration.Reports.PerformanceHilo",
+      "Title": "PerformanceHilo",
+      "Icon": "candlestick_chart",
+      "Name": "performance-hilo",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-performance-wind",
+      "Type": "BizDoc.Configuration.Reports.PerformanceWind",
+      "Title": "PerformanceWind",
+      "Icon": "speed",
+      "Name": "performance-wind",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "States": [
+    {
+      "Title": "Draft",
+      "Name": "draft",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Past": "Opened",
+      "Color": "green",
+      "Title": "Open",
+      "Name": "open",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Future": "WillClose",
+      "Title": "Closed",
+      "Name": "closed",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Title": "Withdrawn",
+      "Name": "withdrawn",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Future": "WillBeRejected",
+      "Shape": "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z",
+      "Title": "Rejected",
+      "Name": "rejected",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Types": [
+    {
+      "Type": "BizDoc.Configuration.Types.Actions",
+      "Title": "Actions",
+      "Name": "actions",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Currencies",
+      "Title": "Currencies",
+      "Name": "currencies",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Documents",
+      "Title": "Documents",
+      "Name": "documents",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Folders",
+      "Title": "Folders",
+      "Name": "folders",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Forms",
+      "Title": "Forms",
+      "Name": "forms",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Groups",
+      "Title": "Groups",
+      "Name": "groups",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Months",
+      "Title": "Months",
+      "Name": "months",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Quarters",
+      "Title": "Quarters",
+      "Name": "quarters",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Roles",
+      "Title": "Roles",
+      "Name": "roles",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Sources",
+      "Title": "Sources",
+      "Name": "sources",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.States",
+      "Title": "States",
+      "Name": "states",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Users",
+      "Title": "Users",
+      "Name": "users",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.Years",
+      "Title": "Years",
+      "Name": "years",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Types.YesNo",
+      "Title": "YesNo",
+      "Name": "yes-no",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Controls.Select",
+      "Title": "Select",
+      "Name": "select"
+    },
+    {
+      "Type": "BizDoc.Configuration.Controls.Checklist",
+      "Title": "Checklist",
+      "Name": "checklist"
+    },
+    {
+      "Type": "BizDoc.Configuration.Controls.RadioButton",
+      "Title": "RadioButton",
+      "Name": "radio-button"
+    },
+    {
+      "Type": "BizDoc.Configuration.Controls.Checkbox",
+      "Title": "Checkbox",
+      "Name": "checkbox"
+    },
+    {
+      "Type": "BizDoc.Configuration.Controls.Switch",
+      "Title": "Switch",
+      "Name": "switch"
+    }
+  ],
+  "Roles": [
+    {
+      "DataType": "users",
+      "Title": "DirectManager",
+      "Name": "directManager",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Widgets": [
+    {
+      "Template": "bizdoc-actions-slice",
+      "Type": "BizDoc.Configuration.Widgets.ActionsSlice",
+      "Title": "ActionsStatistics",
+      "Name": "actions-slice",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-cube-performance",
+      "Type": "BizDoc.Configuration.Widgets.CubePerformance",
+      "Title": "Performance",
+      "Name": "cube-compare",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-personal-activity",
+      "Type": "BizDoc.Configuration.Widgets.PersonalActivity",
+      "Title": "YourActivity",
+      "Name": "personal-activity",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-personal-score",
+      "Type": "BizDoc.Configuration.Widgets.PersonalScore",
+      "Title": "YourScore",
+      "Name": "personal-score",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Cols": 2,
+      "Template": "bizdoc-recents",
+      "Type": "BizDoc.Configuration.Widgets.RecentDocuments",
+      "Title": "RecentActivity",
+      "Name": "recent-documents",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Rules": [
+    {
+      "Type": "BizDoc.Configuration.Rules.AnomalyRule",
+      "Title": "AnomalyRule",
+      "Name": "anomaly",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.DocumentModelRule",
+      "Title": "DataModelRule",
+      "Name": "model",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.DocumentState",
+      "Title": "DocumentState",
+      "Name": "documentState",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.IsOwnerRule",
+      "Title": "IsOwner",
+      "Name": "isOwner",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.IsSystemRule",
+      "Title": "IsSystem",
+      "Name": "isSystem",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.RecipientRole",
+      "Title": "RecipientRole",
+      "Name": "recipientRole",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.UserFYIRule",
+      "Title": "FYI",
+      "Name": "fyi",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.UserGroups",
+      "Title": "UserGroups",
+      "Name": "userGroups",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Rules.ValueRule",
+      "Title": "ValueRule",
+      "Name": "value",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Actions": [
+    {
+      "TitleMale": "ApproveMale",
+      "TitleFemale": "ApproveFemale",
+      "Adjective": "ApprovedAdjective",
+      "AdjectivePlural": "ApprovedAdjectivePlural",
+      "Past": "Approved",
+      "PastMale": "ApprovedMale",
+      "PastFemale": "ApprovedFemale",
+      "Verb": "ToApprove",
+      "You": "YouApproved",
+      "Shape": "m22.785 8.46-9.045 9.05-4.53-4.53-3.01 3.02 7.54 7.545 12.065-12.065zm-6.785-8.46c8.835 0 16 7.17 16 16 0 8.835-7.165 16-16 16-8.83 0-16-7.165-16-16 0-8.83 7.17-16 16-16z",
+      "Color": "darkgreen",
+      "Type": "BizDoc.Workflow.Actions.Approve",
+      "Title": "Approve",
+      "Icon": "done",
+      "Name": "approve",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "AssignMale",
+      "TitleFemale": "AssignFemale",
+      "Adjective": "AssignedAdjective",
+      "AdjectivePlural": "AssignedAdjectivePlural",
+      "Past": "Assigned",
+      "Verb": "ToAssign",
+      "You": "YouAssigned",
+      "Type": "BizDoc.Workflow.Actions.Assign",
+      "Title": "Assign",
+      "Name": "assign",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "ConfirmMale",
+      "TitleFemale": "ConfirmFemale",
+      "Adjective": "ConfirmAdjactive",
+      "AdjectivePlural": "ConfirmAdjactivePlural",
+      "Past": "Confirmed",
+      "PastMale": "ConfirmedMale",
+      "PastFemale": "ConfirmedFemale",
+      "Verb": "ToConfirm",
+      "Shape": "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",
+      "Color": "blue",
+      "Type": "BizDoc.Workflow.Actions.Confirm",
+      "Title": "Confirm",
+      "Name": "confirm",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "MoveToMale",
+      "TitleFemale": "MoveToFemale",
+      "Adjective": "MoveToAdjective",
+      "AdjectivePlural": "MoveToAdjectivePlural",
+      "Past": "Moved",
+      "PastMale": "MovedMale",
+      "PastFemale": "MovedFemale",
+      "Verb": "ToMove",
+      "You": "YouMoved",
+      "Type": "BizDoc.Workflow.Actions.MoveTo",
+      "Title": "MoveTo",
+      "Name": "move-to",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "RecycleMale",
+      "TitleFemale": "RecycleFemale",
+      "Adjective": "Recycled",
+      "AdjectivePlural": "RecycledPlural",
+      "Verb": "ToRecycle",
+      "Group": 10,
+      "Loggable": false,
+      "Type": "BizDoc.Workflow.Actions.Recycle",
+      "Title": "Recycle",
+      "Name": "recycle",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "RejectMale",
+      "TitleFemale": "RejectFemale",
+      "Adjective": "RejectAdjective",
+      "AdjectivePlural": "RejectAdjectivePlural",
+      "Past": "Rejected",
+      "PastMale": "RejectedMale",
+      "PastFemale": "RejectedFemale",
+      "Verb": "ToReject",
+      "You": "YouRejected",
+      "Shape": "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z",
+      "Color": "darkred",
+      "Type": "BizDoc.Workflow.Actions.Reject",
+      "Title": "Reject",
+      "Icon": "do_not_disturb_on",
+      "Name": "reject",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "ReopenMale",
+      "TitleFemale": "ReopenFemale",
+      "Adjective": "Reopened",
+      "AdjectivePlural": "Reopened",
+      "Past": "Reopened",
+      "Verb": "ToReopen",
+      "Type": "BizDoc.Workflow.Actions.Reopen",
+      "Title": "Reopen",
+      "Name": "reopen",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Adjective": "RerouteAdjective",
+      "AdjectivePlural": "RerouteAdjective",
+      "Past": "Rerouted",
+      "PastMale": "ReroutedMale",
+      "PastFemale": "ReroutedFemale",
+      "Verb": "ToReroute",
+      "You": "YouRerouted",
+      "Type": "BizDoc.Workflow.Actions.Reroute",
+      "Title": "Reroute",
+      "Name": "reroute",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "ReturnMale",
+      "TitleFemale": "ReturnFemale",
+      "Past": "Returned",
+      "PastMale": "ReturnedMale",
+      "PastFemale": "ReturnedFemale",
+      "Verb": "ToReturn",
+      "Shape": "m29.959 8.746h2.041v12.246h-2.041zm-4.082 0h2.041v12.246h-2.041zm-4.082 0h2.041v12.246h-2.041zm-10.205-3.5-8.821 9.623 8.821 9.6229v-5.541h6.123v-8.1639h-6.123zm2.041-5.246v8.746h6.123v12.246h-6.123v8.7461l-13.631-14.869z",
+      "Type": "BizDoc.Workflow.Actions.Return",
+      "Title": "Return",
+      "Name": "return",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "WithdrawMale",
+      "TitleFemale": "WithdrawFemale",
+      "Past": "Withdrawn",
+      "Verb": "ToWithdraw",
+      "Group": 5,
+      "Type": "BizDoc.Workflow.Actions.Withdraw",
+      "Title": "Withdraw",
+      "Name": "withdraw",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "RejectMale",
+      "TitleFemale": "RejectFemale",
+      "Adjective": "RejectAdjective",
+      "AdjectivePlural": "RejectAdjectivePlural",
+      "Past": "Rejected",
+      "PastMale": "RejectedMale",
+      "PastFemale": "RejectedFemale",
+      "Verb": "ToReject",
+      "You": "YouRejected",
+      "Shape": "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z",
+      "Color": "darkred",
+      "Type": "BizDoc.FormIdentity.Configuation.Actions.AuthorizedReject, BizDoc.Authentication.FormIdentity",
+      "Title": "Reject",
+      "Icon": "do_not_disturb_on",
+      "Name": "authorized-reject",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "TitleMale": "ApproveMale",
+      "TitleFemale": "ApproveFemale",
+      "Adjective": "ApprovedAdjective",
+      "AdjectivePlural": "ApprovedAdjectivePlural",
+      "Past": "Approved",
+      "PastMale": "ApprovedMale",
+      "PastFemale": "ApprovedFemale",
+      "Verb": "ToApprove",
+      "You": "YouApproved",
+      "Shape": "m22.785 8.46-9.045 9.05-4.53-4.53-3.01 3.02 7.54 7.545 12.065-12.065zm-6.785-8.46c8.835 0 16 7.17 16 16 0 8.835-7.165 16-16 16-8.83 0-16-7.165-16-16 0-8.83 7.17-16 16-16z",
+      "Color": "darkgreen",
+      "Type": "BizDoc.FormIdentity.Configuation.Actions.AuthrizedApprove, BizDoc.Authentication.FormIdentity",
+      "Title": "Approve",
+      "Icon": "done",
+      "Name": "authrized-approve",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Jobs": [
+    {
+      "Type": "BizDoc.Core.Jobs.EscalateJob",
+      "Title": "Escalate",
+      "Name": "escalate-job",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Core.Jobs.EventsAlertsJob",
+      "Title": "AlertEvents",
+      "Icon": "event",
+      "Name": "events-alerts-job",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Core.Jobs.ExchangeRateJob",
+      "Title": "ExchangeRate",
+      "Icon": "currency_exchange",
+      "Name": "exchange-rate-job",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Core.Jobs.IMAPJob",
+      "Title": "IMAP",
+      "Icon": "outgoing_mail",
+      "Name": "imapjob",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Core.Jobs.NudgeJob",
+      "Title": "Nudge",
+      "Icon": "ring_volume",
+      "Name": "nudge-job",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Core.Jobs.POP3Job",
+      "Title": "POP3",
+      "Icon": "outgoing_mail",
+      "Name": "pop3-job",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Core.Jobs.SummaryMailJob",
+      "Title": "SummaryMail",
+      "Icon": "summarize",
+      "Name": "summary-mail-job",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Utilities": [
+    {
+      "Template": "bizdoc-configuration-designer",
+      "Type": "BizDoc.Configuration.Utilities.Architecture",
+      "Title": "Architecture",
+      "Icon": "architecture",
+      "Name": "architecture",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-trace-utility",
+      "Type": "BizDoc.Configuration.Utilities.DocumentTrace",
+      "Title": "DocumentTrace",
+      "Icon": "pets",
+      "Name": "document-trace",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-form-designer",
+      "Type": "BizDoc.Configuration.Utilities.FormDesigner",
+      "Title": "FormDesigner",
+      "Icon": "design_services",
+      "Name": "form-designer",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-patterns",
+      "Type": "BizDoc.Configuration.Utilities.Patterns",
+      "Title": "Patterns",
+      "Icon": "perm_data_setting",
+      "Name": "patterns",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Type": "BizDoc.Configuration.Utilities.Permissions",
+      "Title": "Permissions",
+      "Icon": "security",
+      "Name": "permissions",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-positions",
+      "Type": "BizDoc.Configuration.Utilities.Positions",
+      "Title": "Positions",
+      "Icon": "assignment_ind",
+      "Name": "positions",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-user-profiler",
+      "Type": "BizDoc.Configuration.Utilities.Profiler",
+      "Title": "Profiler",
+      "Icon": "admin_panel_settings",
+      "Name": "profiler",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-configuration-diff",
+      "Type": "BizDoc.Configuration.Utilities.SystemDiff",
+      "Title": "ConfigurationDiff",
+      "Icon": "dns",
+      "Name": "configuration-diff",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Template": "bizdoc-asp-users",
+      "Type": "BizDoc.FormIdentity.Components.UsersUtility, BizDoc.Authentication.FormIdentity",
+      "Title": "Users",
+      "Icon": "person_outline",
+      "Name": "aspusers",
+      "ResourceType": "BizDoc.Authentication.FormIdentity.Strings, BizDoc.Authentication.FormIdentity"
+    }
+  ],
+  "Nodes": [
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Path",
+        "Data": "m21.915 18.71s9.2061 2.191 10.085 10.959h-32s2.629-9.647 10.518-10.525l2.14 9.151 1.572-0.010002 1.782-4.683-1.664-2.895h3.329l-1.598 2.966 2.037 4.581 1.226-0.010002zm-6.137-18.71c4.876 0 8.834 3.952 8.834 8.833 0 4.876-3.958 8.833-8.834 8.833-4.881 0-8.834-3.957-8.834-8.833 0-4.881 3.953-8.833 8.834-8.833z"
+      },
+      "Type": "BizDoc.Workflow.Activities.Assign",
+      "Title": "Assign",
+      "Name": "assign",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Tasks",
+      "Shape": {
+        "Type": "Bpmn"
+      },
+      "Type": "BizDoc.Workflow.Activities.Email",
+      "Title": "Email",
+      "Name": "email",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Bpmn",
+        "Event": {
+          "Event": "End",
+          "Trigger": "None"
+        }
+      },
+      "Type": "BizDoc.Workflow.Activities.End",
+      "Title": "End",
+      "Name": "end",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Visible": false,
+      "Shape": {
+        "Type": "Flow",
+        "Shape": "Decision"
+      },
+      "Type": "BizDoc.Workflow.Activities.If",
+      "Title": "Decision",
+      "Name": "if",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Visible": false,
+      "Shape": {
+        "Type": "Bpmn",
+        "Event": {
+          "Event": "Intermediate",
+          "Trigger": "None"
+        }
+      },
+      "Type": "BizDoc.Workflow.Activities.Intermediate",
+      "Title": "Intermediate",
+      "Name": "intermediate",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Tasks",
+      "Shape": {
+        "Type": "Flow",
+        "Shape": "PaperTap"
+      },
+      "Type": "BizDoc.Workflow.Activities.Notify",
+      "Title": "Notify",
+      "Name": "notify",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Path",
+        "Data": "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+      },
+      "Type": "BizDoc.Workflow.Activities.Owner",
+      "Title": "Owner",
+      "Name": "owner",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Tasks",
+      "Shape": {
+        "Type": "Flow",
+        "Shape": "PreDefinedProcess"
+      },
+      "Type": "BizDoc.Workflow.Activities.Process",
+      "Title": "Process",
+      "Name": "process",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Path",
+        "Data": "m14.9 19.1h5.1c5.1 0 9.2 4.1 9.2 9.2v3.7h-29.2v-3.6c-1.9009e-7 -5.1 4.1-9.2 9.2-9.2h5.3c-0.59998 0.30002-2.3 1.2-2.3 2l2 1.1s-2 3.1-2 7.5c0 0.5 4.9 0.70001 4.9 0 0-4.5-1.9-7.6-1.9-7.6l1.9-1.1c0-0.89999-1.7-1.7-2.2-2zm-0.29999-19.1c4.5 0 8.1999 3.7 8.1999 8.2 0 4.5-3.6999 8.2-8.1999 8.2-4.5 0-8.2-3.7-8.2-8.2 0-4.5 3.7-8.2 8.2-8.2z"
+      },
+      "Type": "BizDoc.Workflow.Activities.Role",
+      "Title": "Role",
+      "Name": "role",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Tasks",
+      "Shape": {
+        "Type": "Bpmn",
+        "Activity": {
+          "Activity": "Task"
+        }
+      },
+      "Type": "BizDoc.Workflow.Activities.Sms",
+      "Title": "Sms",
+      "Name": "sms",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Bpmn",
+        "Event": {
+          "Event": "Start",
+          "Trigger": "None"
+        }
+      },
+      "Type": "BizDoc.Workflow.Activities.Start",
+      "Title": "Start",
+      "Name": "start",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Visible": false,
+      "Shape": {
+        "Type": "Bpmn",
+        "Gateway": {
+          "Type": "ExclusiveEventBased"
+        }
+      },
+      "Type": "BizDoc.Workflow.Activities.Switch",
+      "Title": "Switch",
+      "Name": "switch",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Bpmn",
+        "Event": {
+          "Event": "Intermediate",
+          "Trigger": "Error"
+        }
+      },
+      "Type": "BizDoc.Workflow.Activities.Terminate",
+      "Title": "Terminate",
+      "Name": "terminate",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Path",
+        "Data": "m17.4 26.3v4h7v-4zm-8.2-7.1h10.8c5.1 0 9.2 4.1 9.2 9.2v3.6h-29.2v-3.6c-2.3262e-7 -5.1 4.1-9.2 9.2-9.2zm5.4-19.2c4.5 0 8.2 3.7 8.2 8.2 0 4.5-3.7 8.2-8.2 8.2-4.5 0-8.2-3.6-8.2-8.2s3.7-8.2 8.2-8.2z"
+      },
+      "Type": "BizDoc.Workflow.Activities.UserField",
+      "Title": "UserForm",
+      "Name": "user-field",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Path",
+        "Data": "m21.915 18.71s9.2061 2.191 10.085 10.959h-32s2.629-9.647 10.518-10.525l2.14 9.151 1.572-0.010002 1.782-4.683-1.664-2.895h3.329l-1.598 2.966 2.037 4.581 1.226-0.010002zm-6.137-18.71c4.876 0 8.834 3.952 8.834 8.833 0 4.876-3.958 8.833-8.834 8.833-4.881 0-8.834-3.957-8.834-8.833 0-4.881 3.953-8.833 8.834-8.833z"
+      },
+      "Type": "BizDoc.Workflow.Activities.UserNode",
+      "Title": "UserNode",
+      "Name": "user-node",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    },
+    {
+      "Palette": "Nodes",
+      "Shape": {
+        "Type": "Path",
+        "Data": "m14.9 19.1h5.1c5.1 0 9.2 4.1 9.2 9.2v3.7h-29.2v-3.6c-1.9009e-7 -5.1 4.1-9.2 9.2-9.2h5.3c-0.59998 0.30002-2.3 1.2-2.3 2l2 1.1s-2 3.1-2 7.5c0 0.5 4.9 0.70001 4.9 0 0-4.5-1.9-7.6-1.9-7.6l1.9-1.1c0-0.89999-1.7-1.7-2.2-2zm-0.29999-19.1c4.5 0 8.1999 3.7 8.1999 8.2 0 4.5-3.6999 8.2-8.1999 8.2-4.5 0-8.2-3.7-8.2-8.2 0-4.5 3.7-8.2 8.2-8.2z"
+      },
+      "Type": "BizDoc.Workflow.Activities.UserRole",
+      "Title": "UserRole",
+      "Name": "user-role",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Views": [
+    {
+      "Template": "bizdoc-timeline",
+      "Type": "BizDoc.Configuration.Insights.Timeline",
+      "Title": "Timeline",
+      "Name": "timeline",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
+  "Sources": [
+    {
+      "Type": "BizDoc.Configuration.Search.AnalysisAxes",
+      "Title": "Analysis",
+      "Name": "analysis-axes",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ]
+}

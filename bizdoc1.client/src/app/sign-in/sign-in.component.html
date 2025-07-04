@@ -1,0 +1,18 @@
+<p>sign-in-component works!</p>
+
+<form [formGroup]="form" class="column">
+  <mat-form-field>
+    <mat-label><r>Username</r></mat-label>
+    <input matInput formControlName="username"/>
+
+  </mat-form-field>
+  <!---->
+  <mat-form-field>
+    <mat-label><r>Password</r></mat-label>
+    <input matInput formControlName="password" type="password"/>
+
+    <button mat-icon-button matPrefix><mat-icon>visibility_off</mat-icon></button>
+  </mat-form-field>
+</form>
+
+<button matButton color="primary" [disabled]="form.invalid" (click)="signIn()"><r>OK</r></button>
