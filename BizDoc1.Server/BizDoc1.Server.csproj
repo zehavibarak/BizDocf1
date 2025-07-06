@@ -11,7 +11,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="BizDoc.Authentication.FormIdentity" Version="9.3.0" />
-		<PackageReference Include="BizDoc.Core" Version="9.2.5" />
+		<PackageReference Include="BizDoc.Core" Version="9.3.0" />
 		<PackageReference Include="BizDoc.Storage.SqlServer" Version="9.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="9.0.6">
 		</PackageReference>

@@ -8,17 +8,16 @@
 </button>
 
 <div class="row">
-  <mat-action-list>
+  <mat-nav-list>
     @for (folder of folders; track folder.name) {
     <mat-list-item [routerLink]="['folder', folder.name]" routerLinkActive="active">
-      <mat-icon>{{folder.icon}}</mat-icon>
-      <span [matBadge]="folder.name === 'ib' && messagesCount ? messagesCount: null" matBadgeSize="small">
-
+      <mat-icon matListItemIcon>{{folder.icon}}</mat-icon>
+      <span matListItemTitle [matBadge]="folder.name === 'ib' && messagesCount ? messagesCount: null" matBadgeSize="small">
         {{folder.title}}
       </span>
     </mat-list-item>
     }
-  </mat-action-list>
+  </mat-nav-list>
   <div class="flex">
 
     <router-outlet />

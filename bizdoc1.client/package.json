@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^20.0.6",
     "@angular/platform-browser-dynamic": "^20.0.6",
     "@angular/router": "^20.0.6",
-    "@bizdoc/core": "3.5",
+    "@bizdoc/core": "3.6",
     "@bizdoc/credentials": "^3.1.0",
     "@bizdoc/survey": "^3.1.0",
     "events": "^3.3.0",

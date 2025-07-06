@@ -1,8 +1,8 @@
   @for (group of forms | groupBy : 'group'; track group.key) {
-<div class="group">
+<div class="form-group">
   <h2 class="">{{group.key}}</h2>
   @for (form of group.elements; track form.name) {
-  <div (click)="create(form)" class="form" matRipple>
+  <div (click)="create(form)" class="form-item" matRipple>
     <div class="title">
       <mat-icon>{{form.icon}}</mat-icon>
       <span>{{form.title}}</span>

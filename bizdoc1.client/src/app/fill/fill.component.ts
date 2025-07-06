@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MailboxService, RecipientModel } from '@bizdoc/core';
+import { MailboxService, RecipientModel, TranslateService } from '@bizdoc/core';
 import { Toast } from '../toast';
 import { playSound } from '../take-action/playSound';
 
@@ -11,6 +11,7 @@ import { playSound } from '../take-action/playSound';
   styleUrl: './fill.component.css'
 })
 export class FormComponent implements OnInit {
+  private _translate = inject(TranslateService);
   private readonly _route = inject(ActivatedRoute);
   private readonly _mailbox = inject(MailboxService);
   private readonly _router = inject(Router);
@@ -29,9 +30,9 @@ export class FormComponent implements OnInit {
   submit() {
     this._mailbox.submit(this.document.id, this.document.version,
       this.document.formId, this.document.model).subscribe({
-        next: () => {
+        next: r => {
           playSound();
-          this._toast.message('Submited');
+          this._toast.message(this._translate.get('Submitted', r.number));
           this._router.navigate(['/zone'])
         }
       });

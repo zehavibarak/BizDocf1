@@ -1,7 +1,8 @@
-<button matButton="outlined" (click)="save()" [disabled]="!dirty"><r>SaveDraft</r></button>
-&nbsp;
-<button matButton="filled" color="primary" (click)="submit()" [disabled]="!valid"><r>Submit</r></button>
-
+<div class="tools">
+  <button matButton="filled" color="primary" (click)="submit()" [disabled]="!valid"><r>Submit</r></button>
+  &nbsp;
+  <button matButton="outlined" (click)="save()" [disabled]="!dirty"><r>SaveDraft</r></button>
+</div>
 <bizdoc-form [model]="document" mode="compose" (dirtyChange)="dirty = $event"
              (validChange)="valid = $event"
             ></bizdoc-form>
