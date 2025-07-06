@@ -22,7 +22,7 @@ export class SignInComponent {
   /** */
   signIn() {
     const { username, password } = this.form.value;
-    this._credentials.signIn(username!, password!).subscribe({
+    this._credentials.signIn(username!, password!, { rememberMe: true }).subscribe({
       next: () => {
         const url = this._route.snapshot.queryParams['r'];
 

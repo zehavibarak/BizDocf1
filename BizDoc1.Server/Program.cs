@@ -11,6 +11,7 @@ builder.Services.AddBizDoc(options =>
     UseSqlServer(connectionString).
     AddFormIdentity(options =>
     {
+        options.Password.RequiredLength = 2;
         options.Password.RequireLowercase = false;
         options.Password.RequireUppercase = false;
         options.Password.RequireDigit = false;

@@ -1,5 +1,5 @@
-import 'package:bizdoc/app.dart';
-import 'package:bizdoc/authenticate/credentials.dart';
+import 'package:bizdoc/bizdoc_app.dart';
+import 'package:bizdoc/authenticate/form_identity.dart';
 import 'package:flutter/material.dart';
 
 void main() {
