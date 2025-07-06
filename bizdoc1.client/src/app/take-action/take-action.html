@@ -1,0 +1,8 @@
+<bizdoc-form [model]="document" mode="preview"></bizdoc-form>
+
+@for (action of actions;track action.name) {
+  <button matButton="outlined" (click)="ok(action)"
+          [style.color]="action.color"
+          >{{action.title}}</button>
+&nbsp;
+}

@@ -1,25 +1,26 @@
-<p>private-zone-component works!</p>
+<div>
+  <span class="divider"></span>
+</div>
 
-<button routerLink="/admin" matIconButton><mat-icon>settings</mat-icon></button>
-<mat-nav-list>
-  @for (folder of folders; track folder.name) {
-  <mat-list-item [routerLink]="['/folder', folder.name]">
-    <mat-icon>{{folder.icon}}</mat-icon>
-    <span [matBadge]="folder.name == 'ib' ? 20: null" matBadgeSize="small">
+<button routerLink="/create" matFab extended>
+  <mat-icon>edit</mat-icon>
+  <r>Submit</r>
+</button>
 
-      {{folder.title}}
-    </span>
-  </mat-list-item>
-  }
-</mat-nav-list>
-<hr />
-<!---->
-<mat-nav-list>
-  @for (form of forms; track form.name) {
-  <mat-list-item (click)="create(form)">
-    <mat-icon>{{form.icon}}</mat-icon>
-    {{form.title}}
-  </mat-list-item>
-  }
-</mat-nav-list>
+<div class="row">
+  <mat-action-list>
+    @for (folder of folders; track folder.name) {
+    <mat-list-item [routerLink]="['folder', folder.name]" routerLinkActive="active">
+      <mat-icon>{{folder.icon}}</mat-icon>
+      <span [matBadge]="folder.name === 'ib' && messagesCount ? messagesCount: null" matBadgeSize="small">
 
+        {{folder.title}}
+      </span>
+    </mat-list-item>
+    }
+  </mat-action-list>
+  <div class="flex">
+
+    <router-outlet />
+  </div>
+</div>

@@ -1,7 +1,7 @@
-<p>fill-form-component works!</p>
+<button matButton="outlined" (click)="save()" [disabled]="!dirty"><r>SaveDraft</r></button>
+&nbsp;
+<button matButton="filled" color="primary" (click)="submit()" [disabled]="!valid"><r>Submit</r></button>
 
-<button matButton (click)="save()" [disabled]="!dirty"><r>Save</r></button>
-<button matButton (click)="submit()" [disabled]="!valid"><r>Submit</r></button>
-
-<bizdoc-form [model]="document" mode="compose"></bizdoc-form>
-<!--[(dirty)]="dirty" [(valid)]="valid"-->
+<bizdoc-form [model]="document" mode="compose" (dirtyChange)="dirty = $event"
+             (validChange)="valid = $event"
+            ></bizdoc-form>

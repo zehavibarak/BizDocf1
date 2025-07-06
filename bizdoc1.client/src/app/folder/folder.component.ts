@@ -19,7 +19,9 @@ export class FolderComponent implements OnInit {
       this.folderId = p['id'])
   }
   /** */
-  onItemClick(evt: any) {
-    this._router.navigate(['/form', evt.id], { state: { data: evt } });
+  onItemClick(evt: RecipientModel) {
+    this._router.navigate([
+      evt.draft ? '/fill' :
+        '/confirm', evt.id], { state: { data: evt } });
   }
 }

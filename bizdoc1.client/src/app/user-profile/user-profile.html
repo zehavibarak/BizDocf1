@@ -1,0 +1,6 @@
+
+<mat-list>
+  @for(lang of languages; track lang) {
+  <mat-list-item (click)="changeLang(lang)">{{lang|translate}}</mat-list-item>
+  }
+</mat-list>

@@ -24,6 +24,14 @@
   "Forms": [
     {
       "Format": "A{0:D5}",
+      "Group": {
+        "en": "General",
+        "he": "\u05D8\u05E4\u05E1\u05D9\u05DD \u05DB\u05DC\u05DC\u05D9\u05D9\u05DD"
+      },
+      "Description": {
+        "en": "This form is used for an important purpose",
+        "he": "\u05D8\u05D5\u05E4\u05E1 \u05D6\u05D4 \u05DE\u05E9\u05DE\u05E9 \u05DC\u05EA\u05DB\u05DC\u05D9\u05EA \u05D7\u05E9\u05D5\u05D1\u05D4"
+      },
       "Workflow": {
         "Version": 0,
         "Connectors": [
@@ -147,7 +155,10 @@
         ]
       },
       "Type": "BizDoc.Configuration.Forms.Box",
-      "Title": "Form 1",
+      "Title": {
+        "en": "Form 1",
+        "he": "\u05D8\u05D5\u05E4\u05E1 1"
+      },
       "Options": {
         "Sections": [
           {
@@ -201,6 +212,417 @@
       },
       "Icon": "description",
       "Name": "form_1"
+    },
+    {
+      "Format": "A{0:D5}",
+      "Group": {
+        "en": "General",
+        "he": "\u05D8\u05E4\u05E1\u05D9\u05DD \u05DB\u05DC\u05DC\u05D9\u05D9\u05DD"
+      },
+      "Description": {
+        "en": "This form is used for an important purpose",
+        "he": "\u05D8\u05D5\u05E4\u05E1 \u05D6\u05D4 \u05DE\u05E9\u05DE\u05E9 \u05DC\u05EA\u05DB\u05DC\u05D9\u05EA \u05D7\u05E9\u05D5\u05D1\u05D4"
+      },
+      "Workflow": {
+        "Version": 0,
+        "Connectors": [
+          {
+            "Id": "connectornk2Jv",
+            "TargetID": "ownerpssHU",
+            "SourceID": "startC3hTA",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {},
+            "Type": "Orthogonal"
+          },
+          {
+            "Id": "connectorAEQBa",
+            "TargetID": "endpI6AQ",
+            "SourceID": "ownerpssHU",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {
+              "Action": "approve"
+            },
+            "Type": "Orthogonal"
+          }
+        ],
+        "Nodes": [
+          {
+            "Id": "ownerpssHU",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 85,
+            "Shape": {
+              "Type": "Flow",
+              "Shape": "Process"
+            },
+            "Style": {},
+            "Annotations": [
+              {
+                "Content": "Owner"
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "owner",
+              "message": "\u0027Waiting for your choice!\u0027",
+              "standardTime": "05:00:00"
+            }
+          },
+          {
+            "Id": "endpI6AQ",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 225,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "End",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": ""
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "end",
+              "state": "closed"
+            }
+          },
+          {
+            "Id": "startC3hTA",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 125,
+            "OffsetY": -35,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "Start",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": "",
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Center",
+                "Style": {
+                  "Fill": "transparent",
+                  "Color": "black",
+                  "FontSize": 12,
+                  "Bold": false,
+                  "Italic": false
+                }
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "start",
+              "state": "open"
+            }
+          }
+        ]
+      },
+      "Type": "BizDoc.Configuration.Forms.Box",
+      "Title": "Form 2",
+      "Options": {
+        "Sections": [
+          {
+            "Name": "section_1",
+            "Title": {
+              "En": "Section 1",
+              "He": "\u05DB\u05DC\u05DC\u05D9 1"
+            },
+            "Rows": [
+              {
+                "Fields": [
+                  {
+                    "Name": "switch_1",
+                    "Label": {
+                      "En": "Switch 1",
+                      "He": "\u05DE\u05EA\u05D2 \u05D0"
+                    },
+                    "ControlType": "switch"
+                  },
+                  {
+                    "DataType": "months",
+                    "Name": "select_1",
+                    "Label": {
+                      "En": "Select 1",
+                      "He": "\u05D1\u05D7\u05D9\u05E8\u05D4 1"
+                    },
+                    "ControlType": "select"
+                  }
+                ]
+              },
+              {
+                "Fields": [
+                  {
+                    "DefaultValue": false,
+                    "Name": "yes_no_1",
+                    "Required": true,
+                    "ControlType": "yes-no"
+                  },
+                  {
+                    "Options": [
+                      {
+                        "Key": "option_1",
+                        "Value": {
+                          "En": "Option 1",
+                          "He": "\u05D0\u05E4\u05E9\u05E8\u05D5\u05EA \u05D0"
+                        }
+                      },
+                      {
+                        "Key": "option_2",
+                        "Value": {
+                          "En": "Option 2",
+                          "He": "\u05D0\u05E4\u05E9\u05E8\u05D5\u05EA \u05D1"
+                        }
+                      }
+                    ],
+                    "Multiple": true,
+                    "Name": "checklist_1",
+                    "Required": true,
+                    "Label": "Checklist 1",
+                    "ControlType": "checklist"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "Icon": "description",
+      "Name": "form_2"
+    },
+    {
+      "Format": "A{0:D5}",
+      "Group": {
+        "en": "Personal",
+        "he": "\u05D8\u05E4\u05E1\u05D9\u05DD \u05D0\u05D9\u05E9\u05D9\u05D9\u05DD"
+      },
+      "Description": {
+        "en": "This form is used for an important purpose",
+        "he": "\u05D8\u05D5\u05E4\u05E1 \u05D6\u05D4 \u05DE\u05E9\u05DE\u05E9 \u05DC\u05EA\u05DB\u05DC\u05D9\u05EA \u05D7\u05E9\u05D5\u05D1\u05D4"
+      },
+      "Workflow": {
+        "Version": 0,
+        "Connectors": [
+          {
+            "Id": "connectornk2Jv",
+            "TargetID": "ownerpssHU",
+            "SourceID": "startC3hTA",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {},
+            "Type": "Orthogonal"
+          },
+          {
+            "Id": "connectorAEQBa",
+            "TargetID": "endpI6AQ",
+            "SourceID": "ownerpssHU",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {
+              "Action": "approve"
+            },
+            "Type": "Orthogonal"
+          }
+        ],
+        "Nodes": [
+          {
+            "Id": "ownerpssHU",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 85,
+            "Shape": {
+              "Type": "Flow",
+              "Shape": "Process"
+            },
+            "Style": {},
+            "Annotations": [
+              {
+                "Content": "Owner"
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "owner",
+              "message": "\u0027Waiting for your choice!\u0027",
+              "standardTime": "05:00:00"
+            }
+          },
+          {
+            "Id": "endpI6AQ",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 225,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "End",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": ""
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "end",
+              "state": "closed"
+            }
+          },
+          {
+            "Id": "startC3hTA",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 125,
+            "OffsetY": -35,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "Start",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": "",
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Center",
+                "Style": {
+                  "Fill": "transparent",
+                  "Color": "black",
+                  "FontSize": 12,
+                  "Bold": false,
+                  "Italic": false
+                }
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "start",
+              "state": "open"
+            }
+          }
+        ]
+      },
+      "Type": "BizDoc.Configuration.Forms.Box",
+      "Title": {
+        "en": "Form 3",
+        "he": "\u05D8\u05D5\u05E4\u05E1 3"
+      },
+      "Options": {
+        "Sections": [
+          {
+            "Name": "section_1",
+            "Title": {
+              "En": "Section 1",
+              "He": "\u05DB\u05DC\u05DC\u05D9 1"
+            },
+            "Rows": [
+              {
+                "Fields": [
+                  {
+                    "Name": "switch_1",
+                    "Label": {
+                      "En": "Switch 1",
+                      "He": "\u05DE\u05EA\u05D2 \u05D0"
+                    },
+                    "ControlType": "switch"
+                  },
+                  {
+                    "DataType": "months",
+                    "Name": "select_1",
+                    "Label": {
+                      "En": "Select 1",
+                      "He": "\u05D1\u05D7\u05D9\u05E8\u05D4 1"
+                    },
+                    "ControlType": "select"
+                  }
+                ]
+              },
+              {
+                "Fields": [
+                  {
+                    "DefaultValue": false,
+                    "Name": "yes_no_1",
+                    "Required": true,
+                    "ControlType": "yes-no"
+                  },
+                  {
+                    "Options": [
+                      {
+                        "Key": "option_1",
+                        "Value": {
+                          "En": "Option 1",
+                          "He": "\u05D0\u05E4\u05E9\u05E8\u05D5\u05EA \u05D0"
+                        }
+                      },
+                      {
+                        "Key": "option_2",
+                        "Value": {
+                          "En": "Option 2",
+                          "He": "\u05D0\u05E4\u05E9\u05E8\u05D5\u05EA \u05D1"
+                        }
+                      }
+                    ],
+                    "Multiple": true,
+                    "Name": "checklist_1",
+                    "Required": true,
+                    "Label": "Checklist 1",
+                    "ControlType": "checklist"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "Icon": "description",
+      "Name": "form_3"
     },
     {
       "Format": "S{0}",

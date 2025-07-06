@@ -17,6 +17,10 @@ import { routes } from './routes';
 import { Localize } from './localize';
 import { CredentialsService } from './credentials.service';
 import { System } from './system/system';
+import { SelectForm } from './select-form/select-form';
+import { GroupByPipe } from './group-by-pipe';
+import { TakeAction } from './take-action/take-action';
+import { UserProfile } from './user-profile/user-profile';
 
 @NgModule({
   declarations: [
@@ -28,12 +32,16 @@ import { System } from './system/system';
     SignInComponent,
     NotFound,
     Localize,
-    System
+    System,
+    SelectForm,
+    GroupByPipe,
+    TakeAction,
+    UserProfile
   ],
   imports: [
     ReactiveFormsModule,
     MaterialModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {}),
     BrowserModule,
     SurveyModule,
     BizDocModule.forRoot({ components: [] }),

@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Router } from '@angular/router';
-import { DocumentModel, MailboxService, RecipientModel } from '@bizdoc/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MailboxService, RecipientModel } from '@bizdoc/core';
 import { Toast } from '../toast';
+import { playSound } from '../take-action/playSound';
 
 @Component({
   selector: 'app-fill',
@@ -17,8 +18,8 @@ export class FormComponent implements OnInit {
 
   document!: RecipientModel;
 
-  dirty: boolean = true;
-  valid: boolean = true;
+  dirty: boolean = false;
+  valid: boolean = false;
 
   ngOnInit(): void {
     this._route.data.subscribe(d =>
@@ -28,8 +29,11 @@ export class FormComponent implements OnInit {
   submit() {
     this._mailbox.submit(this.document.id, this.document.version,
       this.document.formId, this.document.model).subscribe({
-        next: () =>
+        next: () => {
+          playSound();
+          this._toast.message('Submited');
           this._router.navigate(['/zone'])
+        }
       });
   }
   /** */

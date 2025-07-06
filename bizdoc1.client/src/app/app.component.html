@@ -1,5 +1,10 @@
-<img src="/Emblem_of_Israel.svg" />
-
-<button routerLink="/access" matIconButton><mat-icon>account_circle</mat-icon></button>
+<!--<img src="/Emblem_of_Israel.svg" />-->
+<div class="row">
+  <span class="divider"></span>
+  <button matButton routerLink="/access"><r>SignIn</r></button>
+  <button matIconButton (click)="profile($event)"><mat-icon>account_circle</mat-icon></button>
+  |
+  <button routerLink="/admin" matIconButton><mat-icon>settings</mat-icon></button>
+</div>
 
 <router-outlet />

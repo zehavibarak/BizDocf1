@@ -8,6 +8,8 @@ import { recipientResolver } from './recipient-resolver';
 import { NotFound } from './not-found/not-found.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { System } from './system/system';
+import { SelectForm } from './select-form/select-form';
+import { TakeAction } from './take-action/take-action';
 
 export const routes: Route[] = [
   {
@@ -15,20 +17,33 @@ export const routes: Route[] = [
     component: HomeComponent,
   },
   {
-    path: 'form/:id',
+    path: 'zone',
+    component: PrivateZoneComponent,
+    canActivate: [credentialsGuard],
+    children: [
+      {
+        path: 'folder/:id',
+        canActivate: [credentialsGuard],
+        component: FolderComponent,
+      },
+    ]
+  },
+  {
+    path: 'create',
+    component: SelectForm,
+    canActivate: [credentialsGuard],
+  },
+  {
+    path: 'fill/:id',
     component: FormComponent,
     canActivate: [credentialsGuard],
     resolve: { data: recipientResolver }
   },
   {
-    path: 'folder/:id',
-    component: FolderComponent,
+    path: 'confirm/:id',
+    component: TakeAction,
     canActivate: [credentialsGuard],
-  },
-  {
-    path: 'zone',
-    component: PrivateZoneComponent,
-    canActivate: [credentialsGuard]
+    resolve: { data: recipientResolver }
   },
   {
     path: 'access',
