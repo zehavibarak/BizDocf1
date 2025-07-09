@@ -612,7 +612,10 @@
                     "Multiple": true,
                     "Name": "checklist_1",
                     "Required": true,
-                    "Label": "Checklist 1",
+                    "Label": {
+                      "En": "Checklist 1",
+                      "He": "\u05E8\u05E9\u05D9\u05DE\u05D4 1"
+                    },
                     "ControlType": "checklist"
                   }
                 ]
@@ -985,8 +988,6 @@
   ],
   "Tags": [
     {
-      "Template": "bizdoc-role-in-route-tag",
-      "Type": "BizDoc.Core.Generics.Tags.RoleInRoute",
       "Title": "RoleInRoute",
       "Name": "role-in-route",
       "ResourceType": "BizDoc.Core.Resources.Strings"
