@@ -1,7 +1,12 @@
 <!--<img src="/Emblem_of_Israel.svg" />-->
 <div class="row">
   <span class="divider"></span>
+  @if (ok) {
+  <button matButton (click)="disconnect()"><r>SignOut</r></button>
+  }
+  @else {
   <button matButton routerLink="/access"><r>SignIn</r></button>
+  }
   <button matIconButton (click)="profile($event)"><mat-icon>account_circle</mat-icon></button>
   |
   <button routerLink="/admin" matIconButton><mat-icon>settings</mat-icon></button>
@@ -9,4 +14,4 @@
 
 <router-outlet />
 <hr />
-<footer><r>FO</r></footer>
+<footer><r>MFA</r></footer>

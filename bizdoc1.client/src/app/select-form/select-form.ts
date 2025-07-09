@@ -8,7 +8,7 @@ import { Form, SessionService, MailboxService } from '@bizdoc/core';
   templateUrl: './select-form.html',
   styleUrl: './select-form.css'
 })
-export class SelectForm {
+export class SelectFormComponent {
   private readonly _session = inject(SessionService);
   private readonly _mailbox = inject(MailboxService);
   private readonly _router = inject(Router);

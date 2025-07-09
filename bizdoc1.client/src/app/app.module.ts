@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, provideRouter } from '@angular/router';
 import { AuthenticationImpl, BIZDOC_CONFIG, BizDocModule, MaterialModule, SharedModule } from '@bizdoc/core';
+import { withFetch, provideHttpClient } from '@angular/common/http';
 import { CredentialsModule } from '@bizdoc/credentials';
 import { SurveyModule } from '@bizdoc/survey';
 import { AppComponent } from './app.component';
@@ -14,12 +15,12 @@ import { FolderComponent } from './folder/folder.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { NotFound } from './not-found/not-found.component';
 import { routes } from './routes';
-import { Localize } from './localize';
-import { CredentialsService } from './credentials.service';
-import { System } from './system/system';
-import { SelectForm } from './select-form/select-form';
-import { GroupByPipe } from './group-by-pipe';
-import { TakeAction } from './take-action/take-action';
+import { Localize } from './core/localize';
+import { CredentialsService } from './core/credentials.service';
+import { SystemComponent } from './system/system';
+import { SelectFormComponent } from './select-form/select-form';
+import { GroupByPipe } from './core/group-by-pipe';
+import { TakeActionComponent } from './take-action/take-action';
 import { UserProfile } from './user-profile/user-profile';
 
 @NgModule({
@@ -32,10 +33,10 @@ import { UserProfile } from './user-profile/user-profile';
     SignInComponent,
     NotFound,
     Localize,
-    System,
-    SelectForm,
+    SystemComponent,
+    SelectFormComponent,
     GroupByPipe,
-    TakeAction,
+    TakeActionComponent,
     UserProfile
   ],
   imports: [
@@ -50,7 +51,9 @@ import { UserProfile } from './user-profile/user-profile';
     }),
     CredentialsModule.forRoot()
   ],
-  providers: [provideRouter(routes),
+  providers: [
+    provideHttpClient(withFetch()),
+    provideRouter(routes),
   {
     provide: BIZDOC_CONFIG,
     useValue: {}

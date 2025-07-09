@@ -3,13 +3,13 @@ import { FormComponent } from './fill/fill.component';
 import { FolderComponent } from './folder/folder.component';
 import { PrivateZoneComponent } from './private-zone/private-zone.component';
 import { HomeComponent } from './home/home.component';
-import { credentialsGuard } from './credentials-guard';
-import { recipientResolver } from './recipient-resolver';
+import { credentialsGuard } from './core/credentials-guard';
+import { recipientResolver } from './core/recipient-resolver';
 import { NotFound } from './not-found/not-found.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { System } from './system/system';
-import { SelectForm } from './select-form/select-form';
-import { TakeAction } from './take-action/take-action';
+import { SystemComponent } from './system/system';
+import { SelectFormComponent } from './select-form/select-form';
+import { TakeActionComponent } from './take-action/take-action';
 
 export const routes: Route[] = [
   {
@@ -30,7 +30,7 @@ export const routes: Route[] = [
   },
   {
     path: 'create',
-    component: SelectForm,
+    component: SelectFormComponent,
     canActivate: [credentialsGuard],
   },
   {
@@ -41,7 +41,7 @@ export const routes: Route[] = [
   },
   {
     path: 'confirm/:id',
-    component: TakeAction,
+    component: TakeActionComponent,
     canActivate: [credentialsGuard],
     resolve: { data: recipientResolver }
   },
@@ -51,7 +51,7 @@ export const routes: Route[] = [
   },
   {
     path: 'admin',
-    component: System,
+    component: SystemComponent,
   },
   {
     path: '**',

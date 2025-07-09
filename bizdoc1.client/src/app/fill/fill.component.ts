@@ -1,8 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MailboxService, RecipientModel, TranslateService } from '@bizdoc/core';
-import { Toast } from '../toast';
-import { playSound } from '../take-action/playSound';
+import { playAudio, MailboxService, RecipientModel, TranslateService } from '@bizdoc/core';
+import { Toast } from '../core/toast';
 
 @Component({
   selector: 'app-fill',
@@ -31,7 +30,7 @@ export class FormComponent implements OnInit {
     this._mailbox.submit(this.document.id, this.document.version,
       this.document.formId, this.document.model).subscribe({
         next: r => {
-          playSound();
+          playAudio('notification_simple-01');
           this._toast.message(this._translate.get('Submitted', r.number));
           this._router.navigate(['/zone'])
         }

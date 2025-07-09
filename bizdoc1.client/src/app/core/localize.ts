@@ -3,11 +3,12 @@ import { TranslateService } from '@bizdoc/core';
 
 TranslateService.set({
   'en': {
-    FO: 'FO',
+    MFA: 'Ministry of Foreign Affairs',
+    NotFound: 'Not found', 
     PrivateZone: 'Private zone',
   },
   'he': {
-    FO: 'FO',
+    MFA: '',
     PrivateZone: 'אזור אישי',
   },
 });

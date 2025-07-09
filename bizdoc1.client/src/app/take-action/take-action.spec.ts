@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TakeAction } from './take-action';
+import { TakeActionComponent } from './take-action';
 
 describe('TakeAction', () => {
-  let component: TakeAction;
-  let fixture: ComponentFixture<TakeAction>;
+  let component: TakeActionComponent;
+  let fixture: ComponentFixture<TakeActionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TakeAction]
+      declarations: [TakeActionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TakeAction);
+    fixture = TestBed.createComponent(TakeActionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

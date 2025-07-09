@@ -7,7 +7,7 @@ import { firstValueFrom } from 'rxjs';
 })
 export class CredentialsService extends AuthenticationImpl {
   override authenticate(): Promise<any> {
-    return Promise.reject(false);
+    throw 'authenticate!';
   }
   override disconnect?(): Promise<any> {
     throw new Error('Method not implemented.');

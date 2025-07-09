@@ -14,13 +14,19 @@ export class AppComponent implements OnInit {
   private readonly _session = inject(SessionService);
   private readonly _popup = inject(Popup);
 
-  @HostBinding('dir')
-  dir!: string;
+  @HostBinding('dir') dir = this._session.direction;
+  ok!: boolean;
 
   ngOnInit(): void {
-    this.dir = this._session.inverse ? 'rtl': 'ltr';
+    this.ok = this._session.ok;
   }
-
+  /** */
+  disconnect() {
+  }
+  /**
+   * 
+   * @param evt
+   */
   profile(evt: MouseEvent) {
     this._popup.open(UserProfile, evt.target as HTMLElement).
       closed().subscribe();

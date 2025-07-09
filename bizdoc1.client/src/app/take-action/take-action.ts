@@ -1,9 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Action, ActionDialog, MailboxService, RecipientModel, SessionService } from '@bizdoc/core';
-import { Toast } from '../toast';
+import { playAudio, Action, ActionDialog, MailboxService, RecipientModel, SessionService } from '@bizdoc/core';
+import { Toast } from '../core/toast';
 import { MatDialog } from '@angular/material/dialog';
-import { playSound } from './playSound';
 
 @Component({
   selector: 'app-take-action',
@@ -11,7 +10,7 @@ import { playSound } from './playSound';
   templateUrl: './take-action.html',
   styleUrl: './take-action.css'
 })
-export class TakeAction {
+export class TakeActionComponent {
   private readonly _route = inject(ActivatedRoute);
   private readonly _mailbox = inject(MailboxService);
   private readonly _router = inject(Router);
@@ -37,7 +36,7 @@ export class TakeAction {
         this.document.formId,
         this.document.model, action.name, {}).subscribe({
           next: () => {
-            playSound();
+            playAudio('notification_simple-01');
             this._toast.message(action.past || action.name);
             this._router.navigate(['/zone']);
           }
