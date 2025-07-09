@@ -1,7 +1,7 @@
 import { Component, HostBinding, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Form, MailboxService, Popup, SessionService } from '@bizdoc/core';
-import { CredentialsService } from '@bizdoc/credentials';
+import { CredentialsService } from './core/credentials.service';
 import { UserProfile } from './user-profile/user-profile';
 
 @Component({
@@ -11,17 +11,17 @@ import { UserProfile } from './user-profile/user-profile';
   //template: '<bizdoc></bizdoc>',
 })
 export class AppComponent implements OnInit {
-  private readonly _session = inject(SessionService);
+  public readonly session = inject(SessionService);
   private readonly _popup = inject(Popup);
+  private readonly _credentials = inject(CredentialsService);
 
-  @HostBinding('dir') dir = this._session.direction;
-  ok!: boolean;
+  @HostBinding('dir') dir = this.session.direction;
 
   ngOnInit(): void {
-    this.ok = this._session.ok;
   }
   /** */
   disconnect() {
+    this._credentials.disconnect();
   }
   /**
    * 

@@ -405,7 +405,10 @@
                     "Multiple": true,
                     "Name": "checklist_1",
                     "Required": true,
-                    "Label": "Checklist 1",
+                    "Label": {
+                      "En": "Checklist 1",
+                      "He": "\u05D1\u05D7\u05D9\u05E8\u05D4 1"
+                    },
                     "ControlType": "checklist"
                   }
                 ]

@@ -37,8 +37,8 @@
               "src/favicon.ico",
               {
                 "glob": "**/*",
-                "input": "./node_modules/@bizdoc/core/assets/",
-                "output": "./assets/"
+                "input": "./node_modules/@bizdoc/core/assets",
+                "output": "./assets"
               },
               {
                 "glob": "**/*",

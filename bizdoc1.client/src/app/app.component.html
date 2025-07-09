@@ -1,8 +1,9 @@
-<!--<img src="/Emblem_of_Israel.svg" />-->
-<div class="row">
+<header class="row">
+  <button matIconButton routerLink="/"><mat-icon>home</mat-icon></button>
+
   <span class="divider"></span>
-  @if (ok) {
-  <button matButton (click)="disconnect()"><r>SignOut</r></button>
+  @if (session.ok) {
+  <button matButton (click)="disconnect()"><r>Disconnect</r></button>
   }
   @else {
   <button matButton routerLink="/access"><r>SignIn</r></button>
@@ -10,8 +11,10 @@
   <button matIconButton (click)="profile($event)"><mat-icon>account_circle</mat-icon></button>
   |
   <button routerLink="/admin" matIconButton><mat-icon>settings</mat-icon></button>
-</div>
+</header>
 
 <router-outlet />
 <hr />
-<footer><r>MFA</r></footer>
+<footer>&copy; <r>MFA</r>
+ | <a routerLink="/contact"><r>ContactUs</r></a>
+  </footer>
