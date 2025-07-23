@@ -1,0 +1,27 @@
+{
+  "OutOfOffice": {},
+  "Notifications": {
+    "Sound": true,
+    "Active": true,
+    "MyDocumentStateChange": true,
+    "AnyDocumentStateChange": false,
+    "CommentAnyDocument": true,
+    "CommentMyDocument": true,
+    "Tagged": true,
+    "CubeAnomaly": true,
+    "EventsAlarm": 0,
+    "UpcomingEvents": true,
+    "Likes": false
+  },
+  "GrantAccess": {},
+  "Emails": {
+    "Active": true,
+    "Notifications": true,
+    "Mail": true,
+    "Chat": true,
+    "Events": true
+  },
+  "Guides": [
+    "intro"
+  ]
+}

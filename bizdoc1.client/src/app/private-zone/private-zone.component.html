@@ -2,10 +2,12 @@
   <span class="divider"></span>
 </div>
 
-<button routerLink="/create" matFab extended>
+<button routerLink="/create" matFab extended data-help=compose>
   <mat-icon>edit</mat-icon>
   <r>Submit</r>
 </button>
+
+  <a matIconButton (click)="help()"><mat-icon>help</mat-icon></a>
 
 <div class="row">
   <mat-nav-list>

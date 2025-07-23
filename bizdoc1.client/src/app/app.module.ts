@@ -54,7 +54,6 @@ import { UserProfile } from './user-profile/user-profile';
       },
     }),
     SharedModule.forChild({
-      routingEngine: 'ng'
     }),
     BusinessTripModule.forRoot({
 

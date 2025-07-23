@@ -12,7 +12,11 @@
   |
   <button routerLink="/admin" matIconButton><mat-icon>settings</mat-icon></button>
 </header>
-
+@if (loading) {
+<div class="loader-overlay">
+  <mat-spinner></mat-spinner> <!-- Or your custom loading indicator -->
+</div>
+}
 <router-outlet />
 <hr />
 <footer>
