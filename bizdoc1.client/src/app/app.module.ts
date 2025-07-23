@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, provideRouter } from '@angular/router';
+import { RouterModule, provideRouter, } from '@angular/router';
 import { AuthenticationImpl, BIZDOC_CONFIG, BizDocModule, MaterialModule, SharedModule } from '@bizdoc/core';
 import { withFetch, provideHttpClient } from '@angular/common/http';
 import { CredentialsModule } from '@bizdoc/credentials';
@@ -43,19 +43,21 @@ import { UserProfile } from './user-profile/user-profile';
   imports: [
     ReactiveFormsModule,
     MaterialModule,
-    RouterModule,
+    RouterModule.forRoot([], {
+      urlUpdateStrategy: 'eager'
+    }),
     BrowserModule,
     BizDocModule.forRoot({
       components: [],
       maps: {
-        apiKey: 'AIzaSyANC72GNC5HwWJ4Up-0TnfFjurhCJfbRUg', 
+        apiKey: 'AIzaSyANC72GNC5HwWJ4Up-0TnfFjurhCJfbRUg',
       },
     }),
     SharedModule.forChild({
       routingEngine: 'ng'
     }),
     BusinessTripModule.forRoot({
-      
+
     }),
     SurveyModule.forRoot(),
     CredentialsModule.forRoot()
@@ -63,7 +65,7 @@ import { UserProfile } from './user-profile/user-profile';
   providers: [
     provideHttpClient(withFetch()),
     provideRouter(routes),
-  { provide: AuthenticationImpl, useClass: CredentialsService }],
+    { provide: AuthenticationImpl, useClass: CredentialsService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
