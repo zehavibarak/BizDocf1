@@ -12,6 +12,7 @@ TranslateService.set({
     PrivateZone: 'Private zone',
   },
   'he': {
+    SignIn: 'התחבר/י',
     ContactUs:'צור/י קשר',
     Welcome: 'ברוכים הבאים!',
     WelcomeMessage: 'באתר תמצאו כל מה שנדרש.',

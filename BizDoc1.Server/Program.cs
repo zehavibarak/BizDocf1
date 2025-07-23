@@ -16,7 +16,9 @@ builder.Services.AddBizDoc(options =>
         options.Password.RequireUppercase = false;
         options.Password.RequireDigit = false;
         options.Password.RequireNonAlphanumeric = false;
-    });
+    }).
+    AddSurvey().
+    AddBusinessTrip();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -40,6 +42,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseBizDoc().
-    UseFormIdentity();
+    UseFormIdentity().
+    UseSurvey().
+    UseBusinessTrip();
 
 app.Run();

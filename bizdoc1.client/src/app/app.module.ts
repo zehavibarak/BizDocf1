@@ -7,6 +7,7 @@ import { AuthenticationImpl, BIZDOC_CONFIG, BizDocModule, MaterialModule, Shared
 import { withFetch, provideHttpClient } from '@angular/common/http';
 import { CredentialsModule } from '@bizdoc/credentials';
 import { SurveyModule } from '@bizdoc/survey';
+import { BusinessTripModule } from '@bizdoc-apps/business-trip';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PrivateZoneComponent } from './private-zone/private-zone.component';
@@ -42,22 +43,26 @@ import { UserProfile } from './user-profile/user-profile';
   imports: [
     ReactiveFormsModule,
     MaterialModule,
-    RouterModule.forRoot(routes, {}),
+    RouterModule,
     BrowserModule,
-    SurveyModule,
-    BizDocModule.forRoot({ components: [] }),
+    BizDocModule.forRoot({
+      components: [],
+      maps: {
+        apiKey: 'AIzaSyANC72GNC5HwWJ4Up-0TnfFjurhCJfbRUg', 
+      },
+    }),
     SharedModule.forChild({
       routingEngine: 'ng'
     }),
+    BusinessTripModule.forRoot({
+      
+    }),
+    SurveyModule.forRoot(),
     CredentialsModule.forRoot()
   ],
   providers: [
     provideHttpClient(withFetch()),
     provideRouter(routes),
-  {
-    provide: BIZDOC_CONFIG,
-    useValue: {}
-  },
   { provide: AuthenticationImpl, useClass: CredentialsService }],
   bootstrap: [AppComponent]
 })

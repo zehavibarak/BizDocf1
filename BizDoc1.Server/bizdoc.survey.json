@@ -1,0 +1,158 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/moding-il/bizdoc.core/master/bizdoc-schema.json",
+  "Forms": [
+    {
+      "Format": "\u05E1{0}",
+      "Group": {
+        "en": "Surveys",
+        "he": "\u05E1\u05E7\u05E8\u05D9\u05DD"
+      },
+      "Workflow": {
+        "Version": 0,
+        "Connectors": [
+          {
+            "Id": "connectornk2Jv",
+            "TargetID": "ownerpssHU",
+            "SourceID": "startC3hTA",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {},
+            "Type": "Orthogonal"
+          },
+          {
+            "Id": "connectorAEQBa",
+            "TargetID": "endpI6AQ",
+            "SourceID": "ownerpssHU",
+            "Annotations": [],
+            "LineWidth": 0,
+            "Segments": [
+              {
+                "Type": "Orthogonal"
+              }
+            ],
+            "AddInfo": {
+              "Action": "approve"
+            },
+            "Type": "Orthogonal"
+          }
+        ],
+        "Nodes": [
+          {
+            "Id": "ownerpssHU",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 85,
+            "Shape": {
+              "Type": "Flow",
+              "Shape": "Process"
+            },
+            "Style": {},
+            "Annotations": [
+              {
+                "Content": "Owner"
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "owner",
+              "message": "\u0027Waiting for your choice!\u0027",
+              "standardTime": "05:00:00"
+            }
+          },
+          {
+            "Id": "endpI6AQ",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 235,
+            "OffsetY": 225,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "End",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": ""
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "end",
+              "state": "closed"
+            }
+          },
+          {
+            "Id": "startC3hTA",
+            "Width": 50,
+            "Height": 50,
+            "OffsetX": 125,
+            "OffsetY": -35,
+            "Shape": {
+              "Type": "Bpmn",
+              "Shape": "Event",
+              "Event": {
+                "Event": "Start",
+                "Trigger": "None"
+              }
+            },
+            "Style": {
+              "Fill": "white"
+            },
+            "Annotations": [
+              {
+                "Content": "",
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Center",
+                "Style": {
+                  "Fill": "transparent",
+                  "Color": "black",
+                  "FontSize": 12,
+                  "Bold": false,
+                  "Italic": false
+                }
+              }
+            ],
+            "AddInfo": {
+              "nodeType": "start",
+              "state": "open"
+            }
+          }
+        ]
+      },
+      "Type": "BizDoc.Survey.Form, BizDoc.Infrastructure.Survey",
+      "Title": "\u05E1\u05E7\u05E8 1",
+      "Icon": "list_alt",
+      "Name": "survey_1"
+    }
+  ],
+  "Reports": [
+    {
+      "Template": "survey-browser",
+      "Type": "BizDoc.Survey.Browser, BizDoc.Infrastructure.Survey",
+      "Title": "Browser",
+      "Icon": "list_alt",
+      "Name": "browser",
+      "ResourceType": "BizDoc.Survey.Strings, BizDoc.Infrastructure.Survey"
+    }
+  ],
+  "Utilities": [
+    {
+      "Template": "survey-designer",
+      "Type": "BizDoc.Survey.Designer, BizDoc.Infrastructure.Survey",
+      "Title": "Designer",
+      "Icon": "list_alt",
+      "Name": "survey-designer",
+      "ResourceType": "BizDoc.Survey.Strings, BizDoc.Infrastructure.Survey"
+    }
+  ]
+}

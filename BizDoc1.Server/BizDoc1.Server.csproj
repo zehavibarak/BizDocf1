@@ -10,12 +10,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BizDoc.Authentication.FormIdentity" Version="9.3.0" />
-		<PackageReference Include="BizDoc.Core" Version="9.3.0" />
-		<PackageReference Include="BizDoc.Storage.SqlServer" Version="9.0.4" />
-		<PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="9.0.6">
+		<PackageReference Include="BizDoc.Applications.Business-Trip" Version="9.1.0" />
+		<PackageReference Include="BizDoc.Authentication.FormIdentity" Version="9.3.1" />
+		<PackageReference Include="BizDoc.Core" Version="9.4.3" />
+		<PackageReference Include="BizDoc.Infrastructure.Survey" Version="9.0.0" />
+		<PackageReference Include="BizDoc.Storage.SqlServer" Version="9.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="9.0.7">
 		</PackageReference>
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>

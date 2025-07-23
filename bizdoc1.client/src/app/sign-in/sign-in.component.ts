@@ -7,7 +7,7 @@ import { CredentialsService } from '@bizdoc/credentials';
   selector: 'app-sign-in',
   standalone: false,
   templateUrl: './sign-in.component.html',
-  styleUrl: './sign-in.component.css'
+  styleUrl: './sign-in.component.scss'
 })
 export class SignInComponent {
   private readonly _credentials = inject(CredentialsService);

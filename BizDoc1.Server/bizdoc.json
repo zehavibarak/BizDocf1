@@ -1797,6 +1797,64 @@
       "ResourceType": "BizDoc.Core.Resources.Strings"
     }
   ],
+  "Guides": [
+    {
+      "Steps": [
+        {
+          "Selector": "[data-help=compose]",
+          "Content": "ComposeHelp",
+          "ContentMale": "ComposeHelpMale",
+          "ContentFemale": "ComposeHelpFemale",
+          "Position": "End",
+          "ResourceType": "BizDoc.Core.Resources.Strings"
+        },
+        {
+          "Selector": "[data-help=dashboard]",
+          "Title": "Dashboard",
+          "Content": "DashboardHelp",
+          "ContentMale": "DashboardHelpMale",
+          "ContentFemale": "DashboardHelpFemale",
+          "Navigate": "dashboard",
+          "ResourceType": "BizDoc.Core.Resources.Strings"
+        },
+        {
+          "Selector": "[data-help=folders]",
+          "Title": "Mailbox",
+          "Content": "MailboxHelp",
+          "ContentMale": "MailboxHelpMale",
+          "ContentFemale": "MailboxHelpFemale",
+          "Navigate": "mailbox/f/ib",
+          "ResourceType": "BizDoc.Core.Resources.Strings"
+        },
+        {
+          "Selector": "[data-help=chat]",
+          "Title": "Chat",
+          "Content": "ChatHelp",
+          "ContentMale": "ChatHelpMale",
+          "ContentFemale": "ChatHelpFemale",
+          "Position": "End",
+          "ResourceType": "BizDoc.Core.Resources.Strings"
+        },
+        {
+          "Selector": "[data-help=cube]",
+          "Title": "Analytics",
+          "Content": "AnalyticsHelp",
+          "ContentMale": "AnalyticsHelpMale",
+          "ContentFemale": "AnalyticsHelpFemale",
+          "ResourceType": "BizDoc.Core.Resources.Strings"
+        },
+        {
+          "Selector": "[data-help=notifications]",
+          "Title": "Notifications",
+          "Content": "NotificationsHelp",
+          "ResourceType": "BizDoc.Core.Resources.Strings"
+        }
+      ],
+      "Title": "Introduction",
+      "Name": "intro",
+      "ResourceType": "BizDoc.Core.Resources.Strings"
+    }
+  ],
   "Views": [
     {
       "Template": "bizdoc-timeline",

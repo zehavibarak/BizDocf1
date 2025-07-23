@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationImpl } from '@bizdoc/core';
-import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

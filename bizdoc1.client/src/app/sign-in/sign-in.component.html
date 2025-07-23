@@ -3,8 +3,10 @@
 <form [formGroup]="form" class="column">
   <mat-form-field>
     <mat-label><r>Username</r></mat-label>
-    <input matInput formControlName="username"/>
-
+    <input matInput formControlName="username" />
+    @if (form.controls.username.hasError('required')) {
+    <mat-error [innerHTML]="'RequiredErr'|translate:('Username'|translate)"></mat-error>
+    }
   </mat-form-field>
   <!---->
   <mat-form-field>
