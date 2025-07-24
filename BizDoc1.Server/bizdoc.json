@@ -1805,8 +1805,14 @@
           "Content": "ComposeHelp",
           "ContentMale": "ComposeHelpMale",
           "ContentFemale": "ComposeHelpFemale",
-          "Position": "End",
           "ResourceType": "BizDoc.Core.Resources.Strings"
+        },
+        {
+          "Selector": "[data-help=settings]",
+          "Content": {
+            "en": "Settings",
+            "he": "הגדרות"
+          }
         },
         {
           "Selector": "[data-help=dashboard]",
@@ -1823,24 +1829,6 @@
           "Content": "MailboxHelp",
           "ContentMale": "MailboxHelpMale",
           "ContentFemale": "MailboxHelpFemale",
-          "Navigate": "mailbox/f/ib",
-          "ResourceType": "BizDoc.Core.Resources.Strings"
-        },
-        {
-          "Selector": "[data-help=chat]",
-          "Title": "Chat",
-          "Content": "ChatHelp",
-          "ContentMale": "ChatHelpMale",
-          "ContentFemale": "ChatHelpFemale",
-          "Position": "End",
-          "ResourceType": "BizDoc.Core.Resources.Strings"
-        },
-        {
-          "Selector": "[data-help=cube]",
-          "Title": "Analytics",
-          "Content": "AnalyticsHelp",
-          "ContentMale": "AnalyticsHelpMale",
-          "ContentFemale": "AnalyticsHelpFemale",
           "ResourceType": "BizDoc.Core.Resources.Strings"
         },
         {

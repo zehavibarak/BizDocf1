@@ -24,7 +24,10 @@ export class SelectFormComponent {
    */
   create(form: Form) {
     this._mailbox.create(form.name).subscribe(e => {
-      this._router.navigate(['fill', e.id], { state: { data: e } });
+      this._router.navigate(['fill', e.id], {
+        state: { data: e },
+        replaceUrl: true
+      });
     });
   }
 

@@ -9,14 +9,14 @@
 
   <a matIconButton (click)="help()"><mat-icon>help</mat-icon></a>
 
+  <a matIconButton (click)="null"><mat-icon data-help=notifications>notifications</mat-icon></a>
+
 <div class="row">
-  <mat-nav-list>
+  <mat-nav-list data-help=folders>
     @for (folder of folders; track folder.name) {
     <mat-list-item [routerLink]="['folder', folder.name]" routerLinkActive="active">
       <mat-icon matListItemIcon>{{folder.icon}}</mat-icon>
-      <span matListItemTitle [matBadge]="folder.name === 'ib' && messagesCount ? messagesCount: null" matBadgeSize="small">
-        {{folder.title}}
-      </span>
+      <h3 matListItemTitle [matBadge]="folder.name === 'ib' && messagesCount ? messagesCount: null" matBadgeSize="small">{{folder.title}}</h3>
     </mat-list-item>
     }
   </mat-nav-list>

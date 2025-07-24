@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Folder, Form, GuideService, MailboxService, SessionService } from '@bizdoc/core';
+import { Folder, GuideService, SessionService } from '@bizdoc/core';
 
 @Component({
   selector: 'app-private-zone',
@@ -20,16 +19,8 @@ export class PrivateZoneComponent implements OnInit {
 
     this.messagesCount = messagesCount;
     this.folders = folders;
-
-    //this._mailbox.changed.subscribe(e => { })
   }
   help() {
-    this._guide.start({
-      steps: [{
-        selector: '[data-help=compose]',
-        content: 'PrivateZoneHelp'
-      }],
-      name: 'intro'
-    })
+    this._guide.start('intro');
   }
 }

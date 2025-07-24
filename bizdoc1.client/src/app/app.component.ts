@@ -3,6 +3,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { GuideService, Popup, SessionService } from '@bizdoc/core';
 import { CredentialsService } from './core/credentials.service';
 import { UserProfile } from './user-profile/user-profile';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   standalone: false,
@@ -18,13 +19,15 @@ export class AppComponent implements OnInit {
 
   @HostBinding('dir') dir = this.session.direction;
 
+  private readonly _loading$ = new BehaviorSubject<boolean>(false);
+  readonly loading$ = this._loading$.asObservable();
+
   ngOnInit(): void {
     this._router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        this.loading = true;
-      } else if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
-        this.loading = false;
-      }
+      if (event instanceof NavigationStart)
+        this._loading$.next(true);
+      else if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError)
+        this._loading$.next(false);
     });
   }
   loading = false;

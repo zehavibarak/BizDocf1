@@ -8,11 +8,11 @@
   @else {
   <button matButton routerLink="/access"><r>SignIn</r></button>
   }
-  <button matIconButton (click)="profile($event)"><mat-icon>account_circle</mat-icon></button>
+  <button matIconButton (click)="profile($event)" data-help=settings><mat-icon>account_circle</mat-icon></button>
   |
   <button routerLink="/admin" matIconButton><mat-icon>settings</mat-icon></button>
 </header>
-@if (loading) {
+@if (loading$ | async) {
 <div class="loader-overlay">
   <mat-spinner></mat-spinner> <!-- Or your custom loading indicator -->
 </div>

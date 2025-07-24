@@ -14,6 +14,24 @@
     "Likes": false
   },
   "GrantAccess": {},
+  "LastActive": "2025-07-24T09:57:01+03:00",
+  "Extra": {
+    "TravelerProfile": {
+      "Countries": [],
+      "Hotels": [],
+      "Trains": [],
+      "Airlines": [],
+      "CarRentalAgencies": [],
+      "Customers": [],
+      "Projects": [],
+      "Destinations": [],
+      "Origins": [],
+      "Kosher": false,
+      "GlatKosher": false,
+      "Vegeterian": false,
+      "InternalEmployee": false
+    }
+  },
   "Emails": {
     "Active": true,
     "Notifications": true,

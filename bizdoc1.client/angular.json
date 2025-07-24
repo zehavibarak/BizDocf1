@@ -42,6 +42,11 @@
               },
               {
                 "glob": "**/*",
+                "input": "./node_modules/@bizdoc/core/assets/js",
+                "output": "./assets/js"
+              },
+              {
+                "glob": "**/*",
                 "input": "public"
               }
             ],
@@ -96,9 +101,11 @@
               "buildTarget": "bizdoc1.client:build:production"
             },
             "development": {
-              "proxyConfig": "src/proxy.conf.js",
               "buildTarget": "bizdoc1.client:build:development"
             }
+          },
+          "options": {
+              "proxyConfig": "src/proxy.conf.js"
           },
           "defaultConfiguration": "development"
         },
